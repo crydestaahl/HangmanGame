@@ -41,10 +41,10 @@ Hangman.prototype.makeGuess = function (guessedLetter) {
 Hangman.prototype.getStatus = function () {
     
     if (!this.getPuzzel().includes('*')) {
-        renderGame(game1)
+        
         return this.status = 'Finished'
     } else if (this.guessesAllowed <= 0) {
-        renderGame(game1)
+
         return this.status = 'Failed' 
     } else {
         return this.status = 'playing'
