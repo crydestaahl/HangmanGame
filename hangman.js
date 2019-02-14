@@ -6,6 +6,7 @@ const Hangman = function (word, guessesAllowed,) {
     this.word = word.toLowerCase().split('')
     this.guessesAllowed = guessesAllowed 
     this.guessedLetters = []
+    this.status = this.getStatus()
 }
 
 Hangman.prototype.getPuzzel = function () {
@@ -35,10 +36,17 @@ Hangman.prototype.makeGuess = function (guessedLetter) {
     if (isUnique && isBadGuess) {
         this.guessesAllowed--
     }
-
 }
 
-
-// 1. Display the puzzel in the browser
-// 2. Displat the guesses left
-// 3. Seperate the Hangman definition from the rest of the app code (use app.js)
+Hangman.prototype.getStatus = function () {
+    
+    if (!this.getPuzzel().includes('*')) {
+        renderGame(game1)
+        return this.status = 'Finished'
+    } else if (this.guessesAllowed <= 0) {
+        renderGame(game1)
+        return this.status = 'Failed' 
+    } else {
+        return this.status = 'playing'
+    }
+}
