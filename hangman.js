@@ -2,11 +2,12 @@ function log(params) {
     console.log(JSON.stringify(params, null, 4))
 } 
 
-const Hangman = function (word, guessesAllowed,) {
+const Hangman = function (word, guessesAllowed, clue) {
     this.word = word.toLowerCase().split('')
     this.guessesAllowed = guessesAllowed 
     this.guessedLetters = []
     this.status = this.getStatus()
+    this.clue = clue
 }
 
 Hangman.prototype.getPuzzel = function () {
