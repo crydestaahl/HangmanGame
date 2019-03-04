@@ -2,6 +2,7 @@
 // Kommande uppdatering
 /********************************************** */
 
+
 /********************************************** */
 // Nuvarande version
 /********************************************** */
@@ -54,7 +55,7 @@ fetchMovie(randomNumber)
         })
 
         //Listens for klick on button
-        document.querySelector('button').addEventListener('click', function (e) {
+        document.querySelector('#button').addEventListener('click', function (e) {
             location.reload()
         })
 
@@ -68,14 +69,14 @@ const renderGame = function (game) {
     const element = document.createElement('div')
     element.setAttribute('id', 'game-text')
     element.innerHTML = `
-                        <h1>Wanna play Hangman - The Movie?</h1>
-                        <p>The movie I'm looking for contains ${game.word.length} letters. You have ${game.guessesAllowed} attempts to make it.</p>
-                        <p>Here's a clue: ${game.clue}</p>
-                        <p>Use the keybord and press the keys for the letter you'd like to guess on.<br></p>
-                        <p>Good Luck!</p>
+                        <h1 class="centered">Wanna play Hangman - The Movie?</h1>
+                        <p>The movie I'm looking for contains ${game.word.length} letters. You have ${game.guessesAllowed} attempts to make it.</p><br>
+                        <p>Here's a clue: ${game.clue}</p><br>
+                        <p>Use the keybord and press the keys for the letter you'd like to guess on.</p><br>
+                        <h2 class="centered">Good Luck!</h2><br>
                         <h3 id="guessed-letters">Guessed Letters: ${game.guessedLetters}</h3>
-                        <h3 id="guesses-left">Guesses Left: ${game.guessesAllowed}</h3> 
-                        <h2 id="the-word">The word: ${game.getPuzzel()}</h2>
+                        <h3 id="guesses-left">Guesses Left: ${game.guessesAllowed}</h3><br> 
+                        <h2 class="centered" id="the-word">The word: ${game.getPuzzel()}</h2><br>
                         `
     document.querySelector('#the-game').appendChild(element)
 
@@ -84,10 +85,10 @@ const renderGame = function (game) {
         console.log(game.status)
     })
 }
-//Starts the game
 
 
-// renderGame(game)
+
+
 
 //Function for updating the game
 const updateGame = function (game) {
@@ -111,55 +112,3 @@ const renderFinished = function (game) {
     guessesLeft.innerHTML = `Guesses Left: ${game.guessesAllowed}`
     h2.innerHTML = `You lucky son of a bitch, you survived!<br>The movie we were looking for was indeed: ${game.word.join('').toUpperCase()}`
 }
-
-
-
-
-
-// const games = getMovie()
-// [
-
-//     {
-//         word: 'Cat',
-//         tries: 2,
-//         clue: 'Satans fury companions'
-//      },
-//     {
-//         word: 'Door',
-//         tries: 6,
-//         clue: 'Open this ... for endles knowledge'
-//     },
-//      {
-//         word: 'Hoover',
-//         tries: 10,
-//         clue: 'This is how Satan moves'
-//      },
-//      {
-//         word: 'Lucifer',
-//         tries: 8,
-//         clue: 'The name of the devil'
-//     },
-//      {
-//         word: 'Agony',
-//         tries: 9,
-//         clue: 'A state of mind'
-//      },
-//     {
-//         word: 'Violence',
-//         tries: 10,
-//         clue: "Satan's favorit topic"
-//      },
-//      {
-//         word: 'Wine',
-//         tries: 8,
-//         clue: 'Floats in Jesus veins'
-//      },
-//  ]
-
-// const randomGame = games[Math.floor(Math.random() * games.length)]
-
-// const game = new Hangman(randomGame.word, randomGame.tries, randomGame.clue)
-
-// const game = new Hangman(games.word, games.tries, games.clue)
-//Render the game
-

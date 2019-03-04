@@ -1,6 +1,3 @@
-function log(params) {
-    console.log(JSON.stringify(params, null, 4))
-} 
 
 const Hangman = function (word, guessesAllowed, clue) {
     this.word = word.toLowerCase().split('')
@@ -42,10 +39,8 @@ Hangman.prototype.makeGuess = function (guessedLetter) {
 Hangman.prototype.getStatus = function () {
     
     if (!this.getPuzzel().includes('*')) {
-        
         return this.status = 'Finished'
     } else if (this.guessesAllowed <= 0) {
-
         return this.status = 'Failed' 
     } else {
         return this.status = 'playing'

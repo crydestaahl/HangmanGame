@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+
+/*basic reset*/
+* {margin: 0; padding: 0;}
+/*adding a black bg to the body to make things clearer*/
+body {
+   background: black;
+   font-family: 'Roboto Condensed', sans-serif;
+}
+canvas {display: block;}
+
+#c {
+   position: fixed; 
+   top: 0;
+   left: 0; 
+   z-index: -1;
+}
+
+h1 {
+   margin: 1em; 
+   font-size: 35px;
+}
+
+p {
+   font-size: 22px;
+}
+
+
+#game-text {
+   position: fixed; 
+   top: 80px;
+   left: 260px;
+   width: 650px;
+   color: fuchsia;
+   background: rgba(0, 0, 0, 0.6);
+   padding: 36px; 
+   border-radius: 40px;
+   border: 3px dotted fuchsia;
+}
+
+.centered {
+   text-align: center;
+}
+
