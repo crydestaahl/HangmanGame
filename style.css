@@ -1,21 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
+* {
+   margin: 0; 
+   padding: 0;
+}
 
-/*basic reset*/
-* {margin: 0; padding: 0;}
-/*adding a black bg to the body to make things clearer*/
 body {
    background: black;
    font-family: 'Roboto Condensed', sans-serif;
 }
 canvas {display: block;}
-
-#c {
-   position: fixed; 
-   top: 0;
-   left: 0; 
-   z-index: -1;
-}
 
 h1 {
    margin: 1em; 
@@ -26,6 +20,12 @@ p {
    font-size: 22px;
 }
 
+#c {
+   position: fixed; 
+   top: 0;
+   left: 0; 
+   z-index: -1;
+}
 
 #game-text {
    position: fixed; 
