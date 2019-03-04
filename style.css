@@ -9,7 +9,11 @@ body {
    background: black;
    font-family: 'Roboto Condensed', sans-serif;
 }
-canvas {display: block;}
+
+canvas {
+   display: 
+   block;
+}
 
 h1 {
    margin: 1em; 
