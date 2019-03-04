@@ -33,7 +33,7 @@ p {
 
 #game-text {
    position: fixed; 
-   top: 80px;
+   top: 60px;
    left: 260px;
    width: 650px;
    color: fuchsia;
