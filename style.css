@@ -32,10 +32,15 @@ p {
 }
 
 #game-text {
-   position: fixed; 
-   top: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+   width: 70%;
+   /* position: fixed;  */
+   /* top: 60px;
    left: 260px;
-   width: 650px;
+   width: 650px; */
    color: fuchsia;
    background: rgba(0, 0, 0, 0.6);
    padding: 36px; 
@@ -47,3 +52,10 @@ p {
    text-align: center;
 }
 
+@media screen and (max-width: 863px) {
+   #game-text {
+   border: none; 
+   width: 74%;
+   font-size: 15px;
+   }
+}

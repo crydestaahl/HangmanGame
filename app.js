@@ -13,19 +13,19 @@ const fetchMovie = function (randomNumber) {
 }
 
 const getMovie = json => {
-    const games = json 
     
+    const games = json 
     const game = {
              word: games.title,
              tries: Math.floor(games.title.length / 2 - 2),
              clue: games.overview
          }
-    console.log(game.title)
     return game
 }
 
 
 const randomNumber = Math.floor(Math.random() * 950) + 100;
+
 fetchMovie(randomNumber)
     .then(res => {
         if (!res.ok) {
@@ -38,8 +38,6 @@ fetchMovie(randomNumber)
 
         const data = getMovie(json);
         
-        console.log(data)
-
         const game = new Hangman(data.word, data.tries, data.clue)
         renderGame(game)
 
