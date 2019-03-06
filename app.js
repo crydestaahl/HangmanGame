@@ -17,7 +17,7 @@ const getMovie = json => {
     
     const game = {
              word: games.title,
-             tries: games.title.length / 2 - 2,
+             tries: Math.floor(games.title.length / 2 - 2),
              clue: games.overview
          }
     console.log(game.title)
@@ -26,8 +26,14 @@ const getMovie = json => {
 
 
 const randomNumber = Math.floor(Math.random() * 950) + 100;
-fetchMovie(randomNumber)    
-    .then(res => res.json())
+fetchMovie(randomNumber)
+    .then(res => {
+        if (!res.ok) {
+            location.reload()
+       } else {
+            return res.json()
+       }
+    })
     .then(json => {
 
         const data = getMovie(json);
@@ -72,7 +78,7 @@ const renderGame = function (game) {
                         <h1 class="centered">Wanna play Hangman - The Movie?</h1>
                         <p>The movie I'm looking for contains ${game.word.length} letters. You have ${game.guessesAllowed} attempts to make it.</p><br>
                         <p>Here's a clue: ${game.clue}</p><br>
-                        <p>Use the keybord and press the keys for the letter you'd like to guess on.</p><br>
+                        <p>Use the keyboard and press the keys for the letter you'd like to guess on.</p><br>
                         <h2 class="centered">Good Luck!</h2><br>
                         <h3 id="guessed-letters">Guessed Letters: ${game.guessedLetters}</h3>
                         <h3 id="guesses-left">Guesses Left: ${game.guessesAllowed}</h3><br> 
